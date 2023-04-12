@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<title>3WART Wizard</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<div class="pr-settings">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item dropdown">
+				<!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-cog" aria-hidden="true"></i>
+        </a> -->
+				<!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+				<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+					<div class="form-group">
+						<label for="colorpickerbody"> Choose Background Color</label>
+						<div>
+							<input type="color" id="colorpickerbody" name="bodycolor"
+								onChange="changeBodyColor(this.value)">
+						</div>
+						<label for="colorpickertitle"> Choose Title Color</label>
+						<div>
+							<input type="color" id="colorpickertitle" name="titlecolor"
+								onChange="changeTitleColor(this.value)">
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="section-wz ">
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-12 ml-auto mr-auto">
+					<h2 class="wz-title fadeInUp animated a-duration-5 a-delay-05 pr-settings-title">Questions & Answers
+						Wizard</h2>
+
+					<br>
+					<div class="">
+						<div class="row">
+							<div class="col-md-8 fadeInUp animated a-duration-2 a-delay-10">
+
+								<div class="wz_form-wrap" id="wz_form-wrap">
+									<form action="/action_page.php" method="get" target="_blank" id="myform"
+										class="wz_form wz_form-full" autocomplete="off">
+										<ol class="wz_fields">
+
+											<!-- Question 1 -->
+											<li>
+												<label class="wz_field-label wz_anim-upper pr-settings-title"
+													for="q1">Enter Your Name?</label>
+
+												<span class="input input_wzqa">
+													<input class="wz_anim-lower wz_input_field wz_input_field_wzqa"
+														id="q1" name="q1" type="text" placeholder="David Smith..."
+														required />
+													<svg class="graphic graphic_wzqa" width="300%" height="100%"
+														viewBox="0 0 1200 60" preserveAspectRatio="none">
+														<path
+															d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
+													</svg>
+												</span>
+
+											</li>
+											<!-- / Question 1 -->
+
+											<!-- Question 2 -->
+											<li style="text-align: center;">
+												<label class="wz_field-label wz_anim-upper pr-settings-title"
+													for="q2">Choose Picture</label>
+												<div class="wz-imgcontainer ">
+													<div class="wz-image">
+														<img src="img/avatar.png" class="wz_anim-lower" alt=""
+															id="wzimagepreview">
+														<input type="file" id="q2" name="q2"
+															class="wz_anim-lower wz_input_field wz_input_field_wzqa">
+													</div>
+												</div>
+											</li>
+											<!-- / Question 2 -->
+
+											<!-- Question 3 -->
+											<li>
+												<label class="wz_field-label wz_anim-upper pr-settings-title"
+													for="q3">Your Email?</label>
+												<span class="input input_wzqa">
+													<input class="wz_anim-lower wz_input_field wz_input_field_wzqa"
+														id="q3" name="q3" type="email" placeholder="user@mail.com"
+														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
+													<svg class="graphic graphic_wzqa" width="300%" height="100%"
+														viewBox="0 0 1200 60" preserveAspectRatio="none">
+														<path
+															d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
+													</svg>
+												</span>
+											</li>
+											<!-- / Question 3 -->
+
+											<!-- Question 4 -->
+											<li data-input-trigger>
+												<label class="wz_field-label wz_anim-upper pr-settings-title"
+													data-info="Leverage a designated team of experts that deliver the best reactive support.">Choosing
+													the position</label>
+												<div class="wz_radio-group wz_radio-custom clearfix wz_anim-lower">
+													<span><input id="q4b" name="q4" type="radio"
+															value="conversion" /><label for="q4b"
+															class="radio-conversion">web devloper</label></span>
+													<span><input id="q4c" name="q4" type="radio" value="social" /><label
+															for="q4c" class="radio-social">mobile
+															devloper</label></span>
+													<span><input id="q4a" name="q4" type="radio" value="mobile" /><label
+															for="q4a" class="radio-mobile">PHP devloper</label></span>
+												</div>
+											</li>
+											<!-- / Question 4 -->
+
+											<!-- Question 5 -->
+											<li>
+												<label class="wz_field-label wz_anim-upper pr-settings-title"
+													for="q5">Experience</label>
+												<span class="input input_wzqa">
+													<input
+														class="wz_mark wz_anim-lower wz_input_field wz_input_field_wzqa"
+														id="q5" name="q5" type="number" placeholder="0+ Experience"
+														step="1" min="0" />
+													<svg class="graphic graphic_wzqa" width="300%" height="100%"
+														viewBox="0 0 1200 60" preserveAspectRatio="none">
+														<path
+															d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
+													</svg>
+												</span>
+											</li>
+											<!-- / Question 5 -->
+											<!-- Question 6 -->
+
+											<!-- / Question 5 -->
+
+										</ol><!-- /wz_fields -->
+										<button class="wz_submit" type="submit" value="Submit">Send answers</button>
+									</form><!-- /wz_form -->
+								</div><!-- /wz_form-wrap -->
+
+							</div>
+					<div class="col-md-4 my-md-5 p-4 fadeInUp animated a-duration-2 a-delay-12">
+								<div class="wz_progress" style="position: relative; top: -10%;"></div>
+								<h3 class="wz-numbers"></h3>
+								<div class="wz-controls"></div>
+								<p class="wz-description">
+									Ask a question and get answers from your site visitors...
+
+								</p>
+								<p class="wz-shake-cont">
+									<button class="wz-button"><i class="fa fa-long-arrow-right wz-shake-eff"
+											aria-hidden="true"></i></button>
+								</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<script src="js/modernizr.custom.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<script src="js/classie.js"></script>
+	<script src="js/fullscreenForm.js"></script>
+	<script>
+		(function () {
+			var formWrap = document.getElementById('wz_form-wrap');
+
+			[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
+				new SelectFx(el, {
+					stickyPlaceholder: false,
+					onChange: function (val) {
+						document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+					}
+				});
+			});
+
+			new FForm(formWrap, {
+				onReview: function () {
+					classie.add(document.body, 'overview'); // for demo purposes only
+				}
+			});
+		})();
+
+		// Prepare the preview for profile picture
+		$("#q2").change(function () {
+			readURL(this);
+		});
+
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+					$('#wzimagepreview').attr('src', e.target.result).fadeIn('slow');
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
+	</script>
+
+	<script>
+		function changeBodyColor(newBodyColor) {
+			document.body.style.background = newBodyColor;
+		}
+		function changeTitleColor(newTitleColor) {
+			var x, i;
+			x = document.querySelectorAll(".pr-settings-title");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.color = newTitleColor;
+			}
+		}
+	</script>
+
+</body>
+
+
+</html>
