@@ -515,14 +515,22 @@ function getSelectedValue() {
             data.countries.forEach(country => {
                 if (country === selectedValue) {
                     count = 1;
-                  
+
                 }
             });
             if (count) {
                 var link = document.getElementById('constdata');
-						link.style.display = 'block';
+                link.style.display = 'block';
+                const box = document.getElementById('removeid');
+                box.removeAttribute('data-input-trigger');
             } else {
-                console.log("else");
+                // var link = document.getElementById('constdata5');
+                // link.style.display = 'block';
+                //alert("work")
+                //  ul.innerHTML += 
+                // li.innerHTML = '<li data-input-trigger></li>';
+
+                // document.getElementById('countrydata').appendChild(li);
             }
 
         });
