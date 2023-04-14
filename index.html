@@ -107,7 +107,7 @@
 													<span><input id="q4b" name="q4" type="radio"
 															value="conversion" /><label for="q4b"
 															class="radio-conversion"></label></span>
-													<select style="width: 232px;" id="country">
+													<select style="width: 232px;" id="country1">
 														<option value="default">List1 Country</option>
 														<option value="Andorra">Andorra</option>
 														<option value="Angola">Angola</option>
@@ -192,7 +192,7 @@
 													</select>
 													<span><input id="q4c" name="q4" type="radio" value="social" /><label
 															for="q4c" class="radio-social"></label></span>
-													<select style="width: 232px;" id="country">
+													<select style="width: 232px;" id="country2">
 														<option value="default">List2 Country</option>
 														<option value="Cuba">Cuba</option>
 														<option value="Dominican Republic">Dominican Republic</option>
@@ -206,7 +206,7 @@
 													</select>
 													<span><input id="q4a" name="q4" type="radio" value="mobile" /><label
 															for="q4a" class="radio-mobile"></label></span>
-													<select style="width: 232px;" id="country">
+													<select style="width: 232px;" id="country3">
 														<option value="default">List3 Country</option>
 														<option value="Afghanistan">Afghanistan</option>
 														<option value="Albania">Albania</option>
@@ -271,47 +271,70 @@
 														<option value="Uzbekistan">Uzbekistan</option>
 														<option value="Yemen">Yemen</option>
 														<option value="Zambia">Zambia</option>
-														<!-- Add more options here for additional countries -->
 													</select>
+
+
+
+
 												</div>
 											</li>
 											<!-- / Question 4 -->
 
 
 											<!-- Question 5 -->
-											<li data-input-trigger>
+											<li>
 												<label class="wz_field-label wz_anim-upper pr-settings-title"
-													data-info="enter name of country...">is this a Diplomatic
+													data-info="">is this a Diplomatic
 													passport?</label>
-												<div class="wz_radio-group wz_radio-custom clearfix wz_anim-lower">
-													<span><input id="q4b" name="q4" type="radio"
-															value="conversion" /><label for="q4b"
-															class="radio-conversion">yes</label></span>
+												<div style="display: none;" id="yesdata">
+													You do not require a visa to enter Panama and can stay for 90 days
+													or less. There are someadditional requirements in order to qualify
+													for this visa exemption. These requirements may be reviewed
+												</div>
+												<div style="display: none;" id="nodata">
+													You will need a stamped visa to enter Panama. The approval process
+													for stamped visas can take upto 30 business days. The paperwork that
+													must be submitted to get a stamped visa is the same as for an
+													authorized visa, and may be reviewed
+												</div>
 
-													<span><input id="q4a" name="q4" type="radio" value="mobile" /><label
-															for="q4a" class="radio-mobile">no</label></span>
+												<div class="wz_radio-group wz_radio-custom clearfix wz_anim-lower">
+													<label><input type="radio" name="ice_cream" value="yes">Yes</label>
+
+													<label><input type="radio" name="ice_cream" value="no">No</label>
+
 												</div>
 											</li>
 											<!-- Question 5 -->
 
 
 											<!-- Question 5 -->
-											<li data-input-trigger>
+											<li>
 												<label class="wz_field-label wz_anim-upper pr-settings-title"
-													data-info="enter name of country...">Do you possess a valid
-													multiple-entry permit from Australia, Canada, Schengen/EU, Japan,
-													Singapore, South Korea, UK, or the US and this visa is Valid till
-													May 31st 2024?</label>
-												<div class="wz_radio-group wz_radio-custom clearfix wz_anim-lower">
+													data-info="">Do you possess a valid multiple-entry permit from
+													Australia, Canada, Schengen/EU, Japan, Singapore, South Korea, UK,
+													or the US and this visa is Valid till May 31st 2024?</label>
+												<div style="display: none;" id="yesdata1">
+													You do not require a visa to enter Panama and can stay for 90 days
+													or less. There are someadditional requirements in order to qualify
+													for this visa exemption. These requirements may be reviewed
+												</div>
+												<div style="display: none;" id="nodata1">
+													You will need a stamped visa to enter Panama. The approval process
+													for stamped visas can take upto 30 business days. The paperwork that
+													must be submitted to get a stamped visa is the same as for an
+													authorized visa, and may be reviewed
+												</div>
 
-													<span><input id="q4c" name="q4" type="radio" value="social" /><label
-															for="q4c" class="radio-social">yes
-														</label></span>
-													<span><input id="q4a" name="q4" type="radio" value="mobile" /><label
-															for="q4a" class="radio-mobile">no</label></span>
+												<div class="wz_radio-group wz_radio-custom clearfix wz_anim-lower">
+													<label><input type="radio" name="ice_cream1"
+															value="yes1">Yes</label>
+
+													<label><input type="radio" name="ice_cream1" value="no1">No</label>
+
 												</div>
 											</li>
-											
+
 										</ol><!-- /wz_fields -->
 										<button class="wz_submit" type="submit" value="Submit">Send answers</button>
 									</form><!-- /wz_form -->
@@ -342,15 +365,55 @@
 		</div>
 	</div>
 	<script>
-		// Add an event listener to the dropdown to detect changes
-		document.getElementById("country").addEventListener("change", function () {
-			var selectedCountry = this.value; // Get the selected country value
-			console.log(selectedCountry);
-			// You can do additional actions here based on the selected country value
-		});
+		// question 4
+		var iceCreamGroup = document.getElementsByName("ice_cream");
+		for (var i = 0; i < iceCreamGroup.length; i++) {
+			iceCreamGroup[i].addEventListener("change", function () {
+				var selectedButton = document.querySelector('input[name="ice_cream"]:checked');
+				if (selectedButton) {
+					var selectedValue = selectedButton.value;
+					if (selectedValue === "yes") {
+						var link = document.getElementById('yesdata');
+						link.style.display = 'block';
+					} else {
+						var link = document.getElementById('nodata');
+						link.style.display = 'block';
+					}
+				}
+			});
+		}
+	</script>
 
+	<script>
+		// question 5
+		// Get the radio button group
+		var iceCreamGroup = document.getElementsByName("ice_cream1");
 
-		
+		// Add a change event listener to the radio button group
+		for (var i = 0; i < iceCreamGroup.length; i++) {
+			iceCreamGroup[i].addEventListener("change", function () {
+				// Get the selected radio button
+				var selectedButton = document.querySelector('input[name="ice_cream1"]:checked');
+
+				// Check if a radio button is selected
+				if (selectedButton) {
+					// Get the selected value
+					var selectedValue = selectedButton.value;
+
+					// Check the selected value and execute code accordingly
+					if (selectedValue === "yes1") {
+
+						var link = document.getElementById('yesdata1');
+
+						link.style.display = 'block';
+					} else {
+						var link = document.getElementById('nodata1');
+
+						link.style.display = 'block';
+					}
+				}
+			});
+		}
 	</script>
 	<script src="js/modernizr.custom.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
