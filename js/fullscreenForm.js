@@ -500,7 +500,32 @@
 
 
 
+// country
+function getSelectedValue() {
+    var selectedValue = document.getElementById("country").value;
+    // console.log(selectedValue);
+    fetch("countries.json")
+        .then(response => response.json())
+        .then(data => {
+
+            const container = document.getElementById("country");
+            const selectedValue = container.value;
+            console.log(data)
+            var count = 0;
+            data.countries.forEach(country => {
+                if (country === selectedValue) {
+                    count = 1;
+                  
+                }
+            });
+            if (count) {
+                var link = document.getElementById('constdata');
+						link.style.display = 'block';
+            } else {
+                console.log("else");
+            }
+
+        });
 
 
-
-
+}

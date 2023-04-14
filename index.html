@@ -98,12 +98,14 @@
 											<!-- / Question 3 -->
 
 											<!-- Question 4 -->
-											<li data-input-trigger>
+											<li>
 												<label class="wz_field-label wz_anim-upper pr-settings-title"
 													data-info="Leverage a designated team of experts that deliver the best reactive support.">Choosing
 													the Best Plan for You</label>
-												<div class="wz_radio-group wz_radio-custom clearfix wz_anim-lower">
-													<select id="country" name="country" class="form-control">
+												<div id="countries-container"
+													class="wz_radio-group wz_radio-custom clearfix wz_anim-lower">
+													<select id="country" name="country" class="form-control"
+														onchange="getSelectedValue()">
 														<option value="Afghanistan">Afghanistan</option>
 														<option value="Åland Islands">Åland Islands</option>
 														<option value="Albania">Albania</option>
@@ -381,6 +383,20 @@
 														<option value="Zambia">Zambia</option>
 														<option value="Zimbabwe">Zimbabwe</option>
 													</select>
+
+
+													<div style="display: none;" id="constdata">
+														<p style="text-align: center; color: white; font-size: 17px;">
+															You do
+															You do not require a visa to enter Panama and can stay
+															for 90 days or less. There are some additional requirements
+															in order to qualify for this visa exemption. These
+															requirements may be reviewed at
+															www.embassyofpanama.org/visas-1
+														</p>
+														<p><a href="/" class="btn btn-outlined btn-primary">Go Back to
+																Home ..</a></p>
+													</div>
 												</div>
 											</li>
 											<!-- / Question 4 -->
@@ -425,13 +441,13 @@
 
 
 											<!-- Question 5 -->
-											<li style="font-size: 31px;">
+											<li style="font-size: 27px;">
 												<label class="wz_field-label wz_anim-upper pr-settings-title"
 													data-info="">Do you possess a valid multiple-entry permit from
 													Australia, Canada, Schengen/EU, Japan, Singapore, South Korea, UK,
 													or the US and this visa is Valid till May 31st 2024?</label>
 												<div style="display: none;" id="yesdata1">
-													<p style="font-size: 20px;">You do not require a visa to enter
+													<p style="font-size: 23px;">You do not require a visa to enter
 														Panama and can stay for 90
 														days or less. There are some
 														additional requirements in order to qualify for this visa
