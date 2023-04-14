@@ -1517,3 +1517,20 @@ body{padding-top:30px;}
     background: #47a447;
 }
 
+
+
+.md-country-picker-item {
+  position: relative;
+  line-height: 20px;
+  padding: 10px 0 10px 40px;
+}
+
+.md-country-picker-flag {
+  position: absolute;
+  left: 0;
+  height: 20px;
+}
+
+.mbsc-scroller-wheel-item-2d .md-country-picker-item {
+  transform: scale(1.1);
+}
