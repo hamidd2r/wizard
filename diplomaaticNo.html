@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <title>Wizard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="pr-settings">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-cog" aria-hidden="true"></i>
+        </a> -->
+                <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+                <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+                    <div class="form-group">
+                        <label for="colorpickerbody"> Choose Background Color</label>
+                        <div>
+                            <input type="color" id="colorpickerbody" name="bodycolor"
+                                onChange="changeBodyColor(this.value)">
+                        </div>
+                        <label for="colorpickertitle"> Choose Title Color</label>
+                        <div>
+                            <input type="color" id="colorpickertitle" name="titlecolor"
+                                onChange="changeTitleColor(this.value)">
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-wz ">
+        <div class="container-fluid">
+
+            <div style="text-align: center; color: white;" class="header1">
+                <h2 style="justify-content: center; text-align: center;"
+                    class="wz-title1 fadeInUp animated a-duration-5 a-delay-05 pr-settings-title">
+                    <p>You will need a stamped visa to enter Panama. The approval process for stamped visas can take up
+                        to 30 business days. The paperwork that must be submitted to get a stamped visa is the same as
+                        for an authorized visa, and may be reviewed at <a
+                            href="https://embassyofpanama.org/visas-1">embassyofpanama.org/visas-1</a>. (NOTE: All
+                        documents must be translated into Spanish.)</p>
+                </h2>
+                <!-- <p><a href="/" class="btn btn-outlined btn-primary">Go Back to Home ..</a></p> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        // Add an event listener to the dropdown to detect changes
+        document.getElementById("country").addEventListener("change", function () {
+            var selectedCountry = this.value; // Get the selected country value
+            console.log("Selected country: " + selectedCountry);
+            // You can do additional actions here based on the selected country value
+        });
+    </script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="js/classie.js"></script>
+    <script src="js/fullscreenForm.js"></script>
+    <script>
+        (function () {
+            var formWrap = document.getElementById('wz_form-wrap');
+
+            [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
+                new SelectFx(el, {
+                    stickyPlaceholder: false,
+                    onChange: function (val) {
+                        document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+                    }
+                });
+            });
+
+            new FForm(formWrap, {
+                onReview: function () {
+                    classie.add(document.body, 'overview'); // for demo purposes only
+                }
+            });
+        })();
+
+        // Prepare the preview for profile picture
+        $("#q2").change(function () {
+            readURL(this);
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#wzimagepreview').attr('src', e.target.result).fadeIn('slow');
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <script>
+        function changeBodyColor(newBodyColor) {
+            document.body.style.background = newBodyColor;
+        }
+        function changeTitleColor(newTitleColor) {
+            var x, i;
+            x = document.querySelectorAll(".pr-settings-title");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.color = newTitleColor;
+            }
+        }
+    </script>
+</body>
+
+</html>

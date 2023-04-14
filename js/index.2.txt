@@ -202,7 +202,7 @@
 														<option value="The People’s Republic of China">The People’s
 															Republic of China</option>
 														<option value="Venezuela">Venezuela</option>
-
+														
 													</select>
 													<span><input id="q4a" name="q4" type="radio" value="mobile" /><label
 															for="q4a" class="radio-mobile"></label></span>
@@ -237,7 +237,7 @@
 														<option value="Kosovo">Kosovo</option>
 														<option value="Kyrgyzstan">Kyrgyzstan</option>
 														<option value="Laos">Laos</option>
-														<option value=">Choose a country">Choose a country</option>
+														<option value="">Choose a country</option>
 														<option value="Lebanon">Lebanon</option>
 														<option value="Lesotho">Lesotho</option>
 														<option value="Liberia">Liberia</option>
@@ -311,7 +311,31 @@
 															for="q4a" class="radio-mobile">no</label></span>
 												</div>
 											</li>
-											
+											<!-- Question 5 -->
+
+											<!-- / Question 4 -->
+
+											<!-- Question 5 -->
+											<!-- <li>
+												<label class="wz_field-label wz_anim-upper pr-settings-title"
+													for="q5">Experience</label>
+												<span class="input input_wzqa">
+													<input
+														class="wz_mark wz_anim-lower wz_input_field wz_input_field_wzqa"
+														id="q5" name="q5" type="number" placeholder="0+ Experience"
+														step="1" min="0" />
+													<svg class="graphic graphic_wzqa" width="300%" height="100%"
+														viewBox="0 0 1200 60" preserveAspectRatio="none">
+														<path
+															d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
+													</svg>
+												</span>
+											</li> -->
+											<!-- / Question 5 -->
+											<!-- Question 6 -->
+
+											<!-- / Question 5 -->
+
 										</ol><!-- /wz_fields -->
 										<button class="wz_submit" type="submit" value="Submit">Send answers</button>
 									</form><!-- /wz_form -->
@@ -345,12 +369,9 @@
 		// Add an event listener to the dropdown to detect changes
 		document.getElementById("country").addEventListener("change", function () {
 			var selectedCountry = this.value; // Get the selected country value
-			console.log(selectedCountry);
+			console.log("Selected country: " + selectedCountry);
 			// You can do additional actions here based on the selected country value
 		});
-
-
-		
 	</script>
 	<script src="js/modernizr.custom.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

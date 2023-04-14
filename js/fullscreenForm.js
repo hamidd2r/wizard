@@ -73,7 +73,7 @@
         // the form element
         this.formEl = this.el.querySelector('form');
         this.ctrlButton = this.el.querySelector('wz-button');
-    // list of fields
+        // list of fields
         this.fieldsList = this.formEl.querySelector('ol.wz_fields');
 
         // current field position
@@ -113,6 +113,7 @@
             });
             var dots = '';
             for (var i = 0; i < this.fieldsCount; ++i) {
+                //alert(i);
                 dots += i === this.current ? '<button class="btn btn-round wz_dot-current"></button>' : '<button class="btn btn-round" disabled></button>';
             }
             this.ctrlNav.innerHTML = dots;
@@ -177,11 +178,7 @@
         });
 
 
-        // document.querySelectorAll('.wz-button').forEach(item => {
-        // item.addEventListener('click', event => {
-        // self._nextField(); 
-        // })
-        // })
+
 
         // navigation dots
         if (this.options.ctrlNavDots) {
@@ -246,7 +243,20 @@
             return false;
         }
         this.isAnimating = true;
+        console.log(this.current);
 
+        // if (this.current == 3) {
+        //     var link = document.getElementById('hide-button');
+        //     style.display = 'none';
+        //     style.visibility = 'hidden';
+        //     var new_ele = document.getElementById('show-email');
+        //     new_ele.style.display = 'block';
+        // } else {
+        //     var link = document.getElementById('hide-button');
+        //     link.style.display = 'block';
+        //     var new_ele = document.getElementById('show-email');
+        //     new_ele.style.display = 'none';
+        // }
         // check if on last step
         this.isLastStep = this.current === this.fieldsCount - 1 && backto === undefined ? true : false;
 
