@@ -197,11 +197,8 @@
 
                 switch (input.tagName.toLowerCase()) {
                     case 'select':
-
                         input.addEventListener('change', function () {
-                            // self._nextField();
-                            getSelectedValue(self)
-                            iceCreamGroup(self)
+                            self._nextField();
                         });
                         break;
 
@@ -504,9 +501,8 @@
 
 
 // country
-function getSelectedValue(self) {
-
-    // var selectedValue = document.getElementById("country").value;
+function getSelectedValue() {
+    var selectedValue = document.getElementById("country").value;
     // console.log(selectedValue);
     fetch("countries.json")
         .then(response => response.json())
@@ -528,12 +524,11 @@ function getSelectedValue(self) {
                 link.style.display = 'block';
              
             } else {
+                var link = document.getElementById('elsecon');
+               
 
-                // var self=this;
-                
-                self._nextField();
-                // this._nextField(0) 
-                       }
+                link.style.display = 'block';
+            }
 
         });
 
@@ -564,7 +559,9 @@ function getSelectedValue(self) {
 
 						link.style.display = 'block';
 					} else {
-					
+						var link = document.getElementById('nodata1');
+
+						link.style.display = 'block';
 					}
 				}
 			});

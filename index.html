@@ -60,7 +60,7 @@
 										<ol class="wz_fields">
 
 											<!-- Question 1 -->
-											<li>
+											<li >
 												<label class="wz_field-label wz_anim-upper pr-settings-title"
 													for="q1">Your Name</label>
 
@@ -80,7 +80,7 @@
 											<!-- / Question 1 -->
 
 											<!-- Question 3 -->
-											<li>
+											<li >
 												<label class="wz_field-label wz_anim-upper pr-settings-title"
 													for="q3">Your email ID with which you registered on
 													Gprocongress.org</label>
@@ -98,14 +98,14 @@
 											<!-- / Question 3 -->
 
 											<!-- Question 4 -->
-											<li data-input-trigger id="removeid">
+											<li data-input-trigger >
 												<label class="wz_field-label wz_anim-upper pr-settings-title"
 													data-info="Leverage a designated team of experts that deliver the best reactive support.">which
 													Country passport do you have?</label>
 												<div id="countries-container"
 													class="wz_radio-group wz_radio-custom clearfix wz_anim-lower">
 													<select id="country" name="country" class="form-control"
-														onchange="getSelectedValue()">
+														onchange="this.getSelectedValue">
 														<option value="Afghanistan">Afghanistan</option>
 														<option value="Åland Islands">Åland Islands</option>
 														<option value="Albania">Albania</option>
@@ -394,26 +394,21 @@
 															requirements may be reviewed at
 															www.embassyofpanama.org/visas-1
 														</p>
+														
 														<p><a href="/" class="btn btn-outlined btn-primary">Go Back to
 																Home ..</a></p>
 													</div>
 
 
 
-													<div style="display: none;" id="constdata5">
+													<!-- <div id="elsecon"> -->
 
-														<p><a href="/" class="btn btn-outlined btn-primary">Go Back to
-																Home ..</a></p>
-													</div>
-
-
+													<p data-input-trigger id="elsecon"></p>
+													<!-- </div> -->
 												</div>
 											</li>
 
 
-
-
-											
 											<!-- / Question 4 -->
 
 
