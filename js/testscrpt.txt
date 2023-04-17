@@ -197,8 +197,11 @@
 
                 switch (input.tagName.toLowerCase()) {
                     case 'select':
+
                         input.addEventListener('change', function () {
-                            self._nextField();
+                            // self._nextField();
+                            getSelectedValue(self)
+                            getSelectedcon(self)
                         });
                         break;
 
@@ -501,68 +504,53 @@
 
 
 // country
-function getSelectedValue() {
-    var selectedValue = document.getElementById("country").value;
-    // console.log(selectedValue);
+function getSelectedValue(self) {
     fetch("countries.json")
         .then(response => response.json())
         .then(data => {
 
             const container = document.getElementById("country");
             const selectedValue = container.value;
-           
+            console.log(selectedValue)
+
             var count = 0;
             data.countries.forEach(country => {
                 if (country === selectedValue) {
                     count = 1;
-
                 }
             });
             if (count) {
-              
                 var link = document.getElementById('constdata');
                 link.style.display = 'block';
-             
+
             } else {
-                var link = document.getElementById('elsecon');
-               
-
-                link.style.display = 'block';
+                self._nextField();
             }
-
         });
-
-
 }
 
-// 
 
-	// question 5
-		// Get the radio button group
-		var iceCreamGroup = document.getElementsByName("ice_cream1");
+function getSelectedcon(self) {
+    fetch("list2.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            const container = document.getElementById("country");
+            const selectedValue = container.value;
+            console.log(selectedValue)
+            var count = 0;
+            data.list2.forEach(country => {
+                if (country === selectedValue) {
+                    count = 1;
+                   
+                }
+            });
+            if (count) {
+                var link = document.getElementById('yesdata');
+                link.style.display = 'block';
 
-		// Add a change event listener to the radio button group
-		for (var i = 0; i < iceCreamGroup.length; i++) {
-			iceCreamGroup[i].addEventListener("change", function () {
-				// Get the selected radio button
-				var selectedButton = document.querySelector('input[name="ice_cream1"]:checked');
-
-				// Check if a radio button is selected
-				if (selectedButton) {
-					// Get the selected value
-					var selectedValue = selectedButton.value;
-
-					// Check the selected value and execute code accordingly
-					if (selectedValue === "yes1") {
-
-						var link = document.getElementById('yesdata1');
-
-						link.style.display = 'block';
-					} else {
-						var link = document.getElementById('nodata1');
-
-						link.style.display = 'block';
-					}
-				}
-			});
-		}
+            } else {
+                self._nextField();
+            }
+        });
+}

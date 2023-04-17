@@ -201,7 +201,7 @@
                         input.addEventListener('change', function () {
                             // self._nextField();
                             getSelectedValue(self)
-                            iceCreamGroup(self)
+                            getSelectedcon(self)
                         });
                         break;
 
@@ -505,67 +505,83 @@
 
 // country
 function getSelectedValue(self) {
-
-    // var selectedValue = document.getElementById("country").value;
-    // console.log(selectedValue);
     fetch("countries.json")
         .then(response => response.json())
         .then(data => {
-
+            console.log(data)
             const container = document.getElementById("country");
             const selectedValue = container.value;
-           
+            console.log(selectedValue)
+
             var count = 0;
             data.countries.forEach(country => {
+                if (country === selectedValue) {
+                    count = 1;
+                }
+            });
+            if (count) {
+                var link = document.getElementById('constdata');
+                link.style.display = 'block';
+
+            } else {
+                self._nextField();
+            }
+        });
+}
+
+
+function getSelectedcon(self) {
+    fetch("list2.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            const container = document.getElementById("country");
+            const selectedValue = container.value;
+            console.log(selectedValue)
+            var count = 0;
+            data.list2.forEach(country => {
                 if (country === selectedValue) {
                     count = 1;
 
                 }
             });
             if (count) {
-              
-                var link = document.getElementById('constdata');
+                console.log("work");
+                var link = document.getElementById('yesdata');
                 link.style.display = 'block';
-             
+
             } else {
-
-                // var self=this;
-                
                 self._nextField();
-                // this._nextField(0) 
-                       }
-
+            }
         });
-
-
 }
 
-// 
+$("input[name$='cars']").click(function () {
+    // var test = $(this).val();
+    var e = document.getElementById("country");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    fetch("list2.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            var count = 0;
+            data.countries.forEach(country => {
+                if (country === text) {
+                    count = 1;
 
-	// question 5
-		// Get the radio button group
-		var iceCreamGroup = document.getElementsByName("ice_cream1");
+                }
+            });
+            if (count) {
+                console.log("work");
+                var link = document.getElementById('yesdata');
+                link.style.display = 'block';
 
-		// Add a change event listener to the radio button group
-		for (var i = 0; i < iceCreamGroup.length; i++) {
-			iceCreamGroup[i].addEventListener("change", function () {
-				// Get the selected radio button
-				var selectedButton = document.querySelector('input[name="ice_cream1"]:checked');
-
-				// Check if a radio button is selected
-				if (selectedButton) {
-					// Get the selected value
-					var selectedValue = selectedButton.value;
-
-					// Check the selected value and execute code accordingly
-					if (selectedValue === "yes1") {
-
-						var link = document.getElementById('yesdata1');
-
-						link.style.display = 'block';
-					} else {
-					
-					}
-				}
-			});
-		}
+            } else {
+                // self._nextField();
+            }
+        });
+    console.log(text);
+    // $("div.desc").hide();
+    // $("#Cars" + test).show();
+});
