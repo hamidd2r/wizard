@@ -530,23 +530,51 @@ function getSelectedValue(self) {
 }
 
 
-function getSelectedcon(self) {
+// function getSelectedcon(self) {
+//     fetch("list2.json")
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data)
+//             const container = document.getElementById("country");
+//             const selectedValue = container.value;
+//             console.log(selectedValue)
+//             var count = 0;
+//             data.list2.forEach(country => {
+//                 if (country === selectedValue) {
+//                     count = 1;
+
+//                 }
+//             });
+//             if (count) {
+//                 console.log("work");
+//                 var link = document.getElementById('yesdata');
+//                 link.style.display = 'block';
+
+//             } else {
+//                 self._nextField();
+//             }
+//         });
+// }
+
+// function getSelectedcon(self) {
+$("input[name$='cars']").click(function  (self) {
+    // var test = $(this).val();
+    var e = document.getElementById("country");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
     fetch("list2.json")
         .then(response => response.json())
         .then(data => {
-            console.log(data)
-            const container = document.getElementById("country");
-            const selectedValue = container.value;
-            console.log(selectedValue)
+            
             var count = 0;
-            data.list2.forEach(country => {
-                if (country === selectedValue) {
+            data.countries.forEach(country => {
+                if (country === text) {
                     count = 1;
 
                 }
             });
             if (count) {
-                console.log("work");
+                
                 var link = document.getElementById('yesdata');
                 link.style.display = 'block';
 
@@ -554,14 +582,20 @@ function getSelectedcon(self) {
                 self._nextField();
             }
         });
-}
+    console.log(text);
+   
+});
+// }
 
-$("input[name$='cars']").click(function () {
+// last
+
+
+$("input[name$='cars1']").click(function (self) {
     // var test = $(this).val();
     var e = document.getElementById("country");
     var value = e.value;
     var text = e.options[e.selectedIndex].text;
-    fetch("list2.json")
+    fetch("list3.json")
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -573,15 +607,15 @@ $("input[name$='cars']").click(function () {
                 }
             });
             if (count) {
-                console.log("work");
-                var link = document.getElementById('yesdata');
+                
+                var link = document.getElementById('yesdata1');
                 link.style.display = 'block';
 
             } else {
-                // self._nextField();
+                var link = document.getElementById('nodata1');
+                link.style.display = 'block';
             }
         });
     console.log(text);
-    // $("div.desc").hide();
-    // $("#Cars" + test).show();
+   
 });
