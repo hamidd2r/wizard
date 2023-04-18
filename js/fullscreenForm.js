@@ -503,8 +503,6 @@
 })(window);
 
 
-
-
 // country
 function getSelectedValue(self) {
     fetch("countries.json")
@@ -609,6 +607,7 @@ $("input[name$='cars1']").click(function (self) {
                 }
             });
             if (count) {
+              
  
                 var link = document.getElementById('yesdata1');
                 link.style.display = 'block';
@@ -626,13 +625,27 @@ $("input[name$='cars1']").click(function (self) {
                 // ques.style.display = "none";
 
             } else if (!count) {
+                var box = document.getElementById("myBox");
+                box.style.display = "none";
+                var no = document.getElementById("yesno1");
+                no.style.display = "none";
+
+                var para2 = document.getElementById("para2");
+                para2.style.display = "none";
                 var link = document.getElementById('nodata1');
                 link.style.display = 'block';
             } else {
+                var box = document.getElementById("myBox");
+                box.style.display = "none";
+                var no = document.getElementById("yesno1");
+                no.style.display = "none";
+
+                var para2 = document.getElementById("para2");
+                para2.style.display = "none";
                 var link = document.getElementById('nodata2');
                 link.style.display = 'block';
             }
         });
-    console.log(text);
+   
 
 });
