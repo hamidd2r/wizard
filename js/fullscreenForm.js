@@ -532,6 +532,9 @@ function getSelectedValue(self) {
                 var para = document.getElementById("para1");
                 para.style.display = "none";
 
+                var country = document.getElementById("country");
+                country.style.display = "none";
+
 
             } else {
                 self._nextField();
