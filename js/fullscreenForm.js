@@ -322,21 +322,22 @@
                         el.style.visibility = 'hidden';
                     });
 
-                    self._hideCtrl(self.ctrlFldStatus);
-                    // replace class wz_form-full with wz_form-overview
-                    classie.remove(self.formEl, 'wz_form-full');
-                    classie.add(self.formEl, 'wz_form-overview');
-                    classie.add(self.formEl, 'wz_show');
-                    // callback
-                    self.options.onReview();
+                    // self._hideCtrl(self.ctrlFldStatus);
+                    // // replace class wz_form-full with wz_form-overview
+                    // classie.remove(self.formEl, 'wz_form-full');
+                    // classie.add(self.formEl, 'wz_form-overview');
+                    // classie.add(self.formEl, 'wz_show');
+                    // // callback
+                    // self.options.onReview();
+                    
                 } else {
                     classie.remove(nextField, 'wz_show');
 
-                    if (self.options.ctrlNavPosition) {
-                        self.ctrlFldStatusCurr.innerHTML = self.ctrlFldStatusNew.innerHTML;
-                        self.ctrlFldStatus.removeChild(self.ctrlFldStatusNew);
-                        classie.remove(self.ctrlFldStatus, 'wz_show-' + self.navdir);
-                    }
+                    // if (self.options.ctrlNavPosition) {
+                    //     self.ctrlFldStatusCurr.innerHTML = self.ctrlFldStatusNew.innerHTML;
+                    //     self.ctrlFldStatus.removeChild(self.ctrlFldStatusNew);
+                    //     classie.remove(self.ctrlFldStatus, 'wz_show-' + self.navdir);
+                    // }
                 }
                 self.isAnimating = false;
             };
