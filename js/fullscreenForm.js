@@ -531,37 +531,11 @@ function getSelectedValue(self) {
 }
 
 
-// function getSelectedcon(self) {
-//     fetch("list2.json")
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data)
-//             const container = document.getElementById("country");
-//             const selectedValue = container.value;
-//             console.log(selectedValue)
-//             var count = 0;
-//             data.list2.forEach(country => {
-//                 if (country === selectedValue) {
-//                     count = 1;
-
-//                 }
-//             });
-//             if (count) {
-//                 console.log("work");
-//                 var link = document.getElementById('yesdata');
-//                 link.style.display = 'block';
-
-//             } else {
-//                 self._nextField();
-//             }
-//         });
-// }
-
-// function getSelectedcon(self) {
-$("input[name$='cars']").click(function  (self) {
+function getSelectedcon(self) {
+$("input[name$='cars']").click(function() {
     // var test = $(this).val();
     var e = document.getElementById("country");
-    var value = e.value;
+   
     var text = e.options[e.selectedIndex].text;
     fetch("list2.json")
         .then(response => response.json())
@@ -578,15 +552,16 @@ $("input[name$='cars']").click(function  (self) {
                 
                 var link = document.getElementById('yesdata');
                 link.style.display = 'block';
+              
 
             } else {
                 self._nextField();
             }
         });
-    console.log(text);
+    
    
 });
-// }
+}
 
 // last
 
