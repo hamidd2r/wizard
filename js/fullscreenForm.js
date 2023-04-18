@@ -588,9 +588,13 @@ $("input[name$='cars1']").click(function (self) {
                 var link = document.getElementById('yesdata1');
                 link.style.display = 'block';
 
-            } else {
+            }else if(!count) {
                 var link = document.getElementById('nodata1');
                 link.style.display = 'block';
+            }
+            else{
+                var link = document.getElementById('nodata2');
+                link.style.display = 'block'; 
             }
         });
     console.log(text);
