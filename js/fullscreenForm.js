@@ -606,7 +606,7 @@ $("input[name$='cars1']").click(function (self) {
                 }
             });
             if (count) {
-
+ 
                 var link = document.getElementById('yesdata1');
                 link.style.display = 'block';
 
@@ -618,6 +618,9 @@ $("input[name$='cars1']").click(function (self) {
 
                 var para2 = document.getElementById("para2");
                 para2.style.display = "none";
+
+                // var ques = document.getElementById("ques");
+                // ques.style.display = "none";
 
             } else if (!count) {
                 var link = document.getElementById('nodata1');
