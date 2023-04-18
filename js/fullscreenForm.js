@@ -329,7 +329,7 @@
                     // classie.add(self.formEl, 'wz_show');
                     // // callback
                     // self.options.onReview();
-                    
+
                 } else {
                     classie.remove(nextField, 'wz_show');
 
@@ -426,6 +426,7 @@
      */
     FForm.prototype._hideCtrl = function (ctrl) {
         classie.remove(ctrl, 'wz_show');
+
     }
 
     // TODO: this is a very basic validation function. Only checks for required fields..
@@ -524,6 +525,14 @@ function getSelectedValue(self) {
                 var link = document.getElementById('constdata');
                 link.style.display = 'block';
 
+                var box = document.getElementById("myBox");
+                box.style.display = "none";
+
+
+                var para = document.getElementById("para1");
+                para.style.display = "none";
+
+
             } else {
                 self._nextField();
             }
@@ -532,35 +541,48 @@ function getSelectedValue(self) {
 
 
 function getSelectedcon(self) {
-$("input[name$='cars']").click(function() {
-    // var test = $(this).val();
-    var e = document.getElementById("country");
-   
-    var text = e.options[e.selectedIndex].text;
-    fetch("list2.json")
-        .then(response => response.json())
-        .then(data => {
-            
-            var count = 0;
-            data.countries.forEach(country => {
-                if (country === text) {
-                    count = 1;
+    $("input[name$='cars']").click(function () {
+        // var test = $(this).val();
+        var e = document.getElementById("country");
 
+        var text = e.options[e.selectedIndex].text;
+        fetch("list2.json")
+            .then(response => response.json())
+            .then(data => {
+
+                var count = 0;
+                data.countries.forEach(country => {
+                    if (country === text) {
+                        count = 1;
+
+                    }
+                });
+                if (count) {
+                    var link = document.getElementById('yesdata');
+                    link.style.display = 'block';
+
+                    var box = document.getElementById("myBox");
+                    box.style.display = "none";
+
+                    var para3 = document.getElementById("para3");
+                    para3.style.display = "none";
+
+                    var yesno = document.getElementById("yesno");
+                    yesno.style.display = "none";
+
+
+
+
+
+
+                } else {
+
+                    self._nextField();
                 }
             });
-            if (count) {
-                
-                var link = document.getElementById('yesdata');
-                link.style.display = 'block';
-              
 
-            } else {
-                self._nextField();
-            }
-        });
-    
-   
-});
+
+    });
 }
 
 // last
@@ -584,19 +606,27 @@ $("input[name$='cars1']").click(function (self) {
                 }
             });
             if (count) {
-                
+
                 var link = document.getElementById('yesdata1');
                 link.style.display = 'block';
 
-            }else if(!count) {
+                var box = document.getElementById("myBox");
+                box.style.display = "none";
+
+                var no = document.getElementById("yesno1");
+                no.style.display = "none";
+
+                var para2 = document.getElementById("para2");
+                para2.style.display = "none";
+
+            } else if (!count) {
                 var link = document.getElementById('nodata1');
                 link.style.display = 'block';
-            }
-            else{
+            } else {
                 var link = document.getElementById('nodata2');
-                link.style.display = 'block'; 
+                link.style.display = 'block';
             }
         });
     console.log(text);
-   
+
 });
